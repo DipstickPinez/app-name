@@ -1,0 +1,96 @@
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: grey;
+}
+main {
+    width: 960px;
+    background-color:white;
+    margin-left:auto;
+    margin-right:auto;
+    box-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 0.4);
+    padding: 50px;
+}
+h1 {
+    line-height: 1;
+    font-size: 5rem;
+    font-weight: 300;
+    color: #1D76E2;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+.header-info {
+    display: flex;
+    gap: 30px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+.header-info > li {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+.header-info > li > img {
+    height: 2.5em;
+}
+.main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.left {
+    display: block;
+}
+.right {
+    display: block;
+}
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #1D76E2;
+    margin-block-start: 15px;
+    margin-block-end: 10px;
+}
+h3 {
+    font-size: 1.4rem;
+    font-weight: 500; 
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    display:inline;
+}
+.item-header > span {
+    color: grey;
+}
+.item-date {
+    color: #4f4f4f;
+    font-size: 0.8rem;
+    margin-block-end: 3px;
+}
+.item > ul {
+    margin-block-start: 7px;
+    margin-block-end: 10px;
+}
+.item > ul > li::marker {
+    content: "➤ ";
+    font-size:0.8em;
+}
+h4 {
+    font-weight: 400;
+    margin-block-start: 4px;
+    margin-block-end: 0px;
+    font-size: 0.9em;
+}
+.inline-list {
+    display: flex;
+    gap: 2ch;
+    margin-block-start: 4px;
+    margin-block-end: 8px;
+}
+.inline-list > :first-child::marker {
+    content: '';
+}
+.inline-list > li+li::marker {
+    content: '• ';
+}
+.degree {
+    color: grey;
+    font-size: 0.95em;
+}
