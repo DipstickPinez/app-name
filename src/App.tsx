@@ -53,14 +53,14 @@ function App() {
               title="Languages"
               titleList={[
                 {
-                  title: "Experienced",
+                  title: "Experienced:",
                   items: [
                     "Javascript",
                     "Typescript",
                   ]
                 },
                 {
-                  title: "Familiar",
+                  title: "Familiar:",
                   items: [
                     "C++",
                     "Lisp",
@@ -92,6 +92,8 @@ function App() {
               items={[
                 "Software Engineering",
                 "Object-Oriented Design",
+                "Whether we want it or not",
+                "We've stepped into a war with the cabal on mars",
               ]}
             />
             <DSList
