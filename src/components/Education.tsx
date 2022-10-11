@@ -1,15 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import './styles.css';
 
-interface EducationParts {
+interface EducationProps {
   university: string;
   degree: string;
   date: string;
   college: string;
 }
 
-const EducationObject = (educationParts: EducationParts) => {
+const Education = (educationParts: EducationProps) => {
   return (
     <section>
       <h3>{educationParts.university}</h3>
@@ -22,4 +20,4 @@ const EducationObject = (educationParts: EducationParts) => {
   );
 };
 
-export default EducationObject;
+export default Education;

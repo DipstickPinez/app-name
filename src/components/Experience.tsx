@@ -1,30 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
-import './styles.css';
 
-interface ExperienceParts {
-    title: string;
-    subtitle: string;
-    bulletedList: string[];
-    itemDate: string;
+interface ExperienceProps {
+  org: string;
+  title?: string;
+  href?: string;
+  link?: string;
+  description: string[];
+  date: string;
+  location?: string;
 }
 
-const ExperienceObject = (experienceParts: ExperienceParts) => {
-    const bulletedListLi = experienceParts.bulletedList.map(
-        description => <li>{description}</li>
-    );
-    return (
-        <section className="item">
-            <div className="item-header">
-                <h3>{experienceParts.title}</h3>
-                <span>| {experienceParts.subtitle}</span>
-            </div>
-            <div className="item-date">{experienceParts.itemDate}</div>
-            <ul>
-                {bulletedListLi}
-            </ul>
-        </section>
-    );
+const Experience = (props: ExperienceProps) => {
+  return (
+    <section className="item">
+      <div className="item-header">
+        <h3>{props.org}</h3>
+        {props.title && <span className="vert-bar" />}
+        {props.title}
+        {props.href && <span className="vert-bar" />}
+        <span>
+          <a href={props.href}>{props.link ?? props.href}</a>
+        </span>
+      </div>
+      <div className="item-date">
+        {props.date}
+        {props.location && <span className="vert-bar" />}
+        {props.location}
+      </div>
+      <ul>
+        {props.description.map(
+          description => <li>{description}</li>
+        )}
+      </ul>
+    </section>
+  );
 };
 
-export default ExperienceObject;
+export default Experience;

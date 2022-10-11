@@ -1,123 +1,127 @@
 import React from 'react';
-import logo from './logo.svg';
-import ProjectObject from './components/Project';
-import HeaderObject from './components/Header';
-import ExperienceObject from './components/Experience';
-import CategoryObject from './components/Category';
-import InlineListObject from "./components/InlineList";
-import LanguageObject from "./components/Language";
-import EducationObject from './components/Education';
+import Header from 'components/Header';
+import Experience from 'components/Experience';
+import DSList from "components/DSList";
+import TList from "components/TList";
+import Education from 'components/Education';
 
 function App() {
   return (
-    <body>
-      <main>
-        <HeaderObject
-          userName="Neia Hu"
-          githubUsername="neeia"
-          locationName="San Gabriel, California"
-          emailName="neiah2718@gmail.com"
-          phoneNumber="+1(626)213-9966"
-        />
-        <div className="main">
-          <div className="left">
-            <section>
-              <h2>Experience</h2>
-              <ExperienceObject
-                title="TDK Headway Technologies"
-                subtitle=".net Developer"
-                bulletedList={[
-                  "Develop",
-                  "Meet with clients",
-                  "Deploy feaodafew"]}
-                itemDate="Apr 2022 - Current | Milpitas, Ca"
-              />
-            </section>
-            <section>
-              <h2>Projects</h2>
-              <ProjectObject
-                title="Arknights Roster"
-                link="https://www.krooster.com/"
-                bulletedList={[
-                  "Built a web app",
-                  "Used Google Firebase",
-                  "Developed accessible features",
-                  "Designed following principles",
-                  "Actively serving over 2,000 registered users with 500 unique daily visitors"]}
-                itemDate="June 2021 - Present"
-              />
-            </section>
-          </div>
-          <div className="right">
-            <CategoryObject
-              categoryName="Skills"
-              subcategories={[
-                <LanguageObject
-                  title="Languages"
-                  experiencedList={[
-                    "Javascript",
-                    "Typescript"]}
-                  familiarList={[
-                    "C++",
-                    "Lisp"]}
-                />,
-                <InlineListObject
-                  title="Tools"
-                  inlineList={[
-                    "Git",
-                    "Github"]}
-                />
+    <main>
+      <Header
+        name="James Raynor"
+        github="jimmyray"
+        location="Joeyray's Bar, Mar Sara"
+        email="jim.raynor@gmail.com"
+        phoneNumber="+1 (800) 444-4444"
+      />
+      <div className="main">
+        <div>
+          <section>
+            <h2>Experience</h2>
+            <Experience
+              org="Raynor's Raiders"
+              title="Commander"
+              description={[
+                "Lead an organization of freedom fighters against the Terran dominion",
+                "Overturned a galactic dictatorship over the course of only five years",
+                "Launched dozens of successful tactical strikes on highly defended targets",
               ]}
+              date="March 2500 - Current"
+              location="Koprulu Sector"
             />
-            <CategoryObject
-              categoryName="Education"
-              subcategories={[
-                <EducationObject
-                  university="Northeastern University"
-                  degree="Computer Science and Mathematics, BS"
-                  date="September 2018 - December 2021"
-                  college="Khoury College of Computer and Informational Sciences"
-                />
+          </section>
+          <section>
+            <h2>Projects</h2>
+            <Experience
+              org="Xel'naga Artifact"
+              href="https://www.xelnaga.com/"
+              link="xelnaga.com"
+              description={[
+                "Reconstructed an ancient artifact of unknown origins from several fragments",
+                "Repurposed the artifact to extract foreign essence from an infested body",
+                "Successfully purified the Queen of Blades, who was restored to her original form",
               ]}
+              date="October - December 2504"
             />
-            <CategoryObject
-              categoryName="Coursework"
-              subcategories={[
-                <InlineListObject
-                  title="Computer Science"
-                  inlineList={[
-                    "Software Engineering",
-                    "Object-Oriented Design"]}
-                />,
-                <InlineListObject
-                  title="Mathematics"
-                  inlineList={[
-                    "Linear Algebra",
-                    "Probability and Statistics"]}
-                />
-              ]}
-            />
-            <CategoryObject
-              categoryName="Interests"
-              subcategories={[
-                <InlineListObject
-                  title="Hobbies"
-                  inlineList={[
-                    "Video Games",
-                    "Cooking and Baking"]}
-                />,
-                <InlineListObject
-                  title="Professional"
-                  inlineList={[
-                    "Web Development",
-                    "Web Design"]}
-                />
-              ]}
-            />
-          </div>
+          </section>
         </div>
+        <div>
+          <section>
+            <h2>Skills</h2>
+            <TList
+              title="Languages"
+              titleList={[
+                {
+                  title: "Experienced",
+                  items: [
+                    "Javascript",
+                    "Typescript",
+                  ]
+                },
+                {
+                  title: "Familiar",
+                  items: [
+                    "C++",
+                    "Lisp",
+                  ]
+                }]
+              }
+            />
+            <DSList
+              title="Tools"
+              items={[
+                "Git",
+                "Github",
+              ]}
+            />
+          </section>
+          <section>
+            <h2>Education</h2>
+            <Education
+              university="Northeastern University"
+              degree="Computer Science and Mathematics, BS"
+              date="September 2018 - December 2021"
+              college="Khoury College of Computer and Informational Sciences"
+            />
+          </section>
+          <section>
+            <h2>Coursework</h2>
+            <DSList
+              title="Computer Science"
+              items={[
+                "Software Engineering",
+                "Object-Oriented Design",
+              ]}
+            />
+            <DSList
+              title="Mathematics"
+              items={[
+                "Linear Algebra",
+                "Probability and Statistics",
+              ]}
+            />
+          </section>
+          <section>
+            <h2>Interests</h2>
+            <DSList
+              title="Hobbies"
+              items={[
+                "Video Games",
+                "Cooking and Baking",
+              ]}
+            />
+            <DSList
+              title="Professional"
+              items={[
+                "Web Development",
+                "Web Design",
+              ]}
+            />
+          </section>
+        </div>
+      </div>
     </main>
-  </body>
   );
 }
 
