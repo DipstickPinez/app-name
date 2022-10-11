@@ -97,19 +97,18 @@ h4 {
 }
 
 .inline-list {
-    display: flex;
+    display: block;
     gap: 2ch;
     margin-block-start: 4px;
     margin-block-end: 8px;
     padding-inline-start: 0px;
 }
-
-    .inline-list > :first-child::marker {
-        content: '';
+    .inline-list > li {
+        display: inline;
     }
 
-    .inline-list > li + li::marker {
-        content: '• ';
+    .inline-list > li + li::before {
+        content: ' • ';
     }
 
 .degree {
