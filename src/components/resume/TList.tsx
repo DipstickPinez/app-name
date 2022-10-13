@@ -1,11 +1,11 @@
 import React from 'react';
 
-interface LanguageProps {
+export interface LanguageProps {
   title: string;
   titleList: TitleList[];
 }
 
-interface TitleList {
+export interface TitleList {
   title: string;
   items: string[];
 }
@@ -15,10 +15,10 @@ const TList = (props: LanguageProps) => {
     <section>
       <h3>{props.title}</h3>
       {props.titleList.map(
-        tl => <section>
+        (tl, i) => <section key={tl.title + i}>
           <h4>{tl.title}</h4>
           <ul className="inline-list">
-            {tl.items.map(item => <li>{item}</li>)}
+            {tl.items.map((item, n) => <li key={item + n}>{item}</li>)}
           </ul>
         </section>
       )}

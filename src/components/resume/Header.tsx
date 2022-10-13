@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface HeaderProps {
+export interface HeaderProps {
   name: string;
   github: string;
   location: string;
@@ -8,26 +8,27 @@ interface HeaderProps {
   phoneNumber: string;
 }
 
-const Header = (props: HeaderProps) => {
+const Header = (props: { header: HeaderProps }) => {
+  const { name, github, location, email, phoneNumber } = props.header;
   return (
     <header>
-      <h1>{props.name}</h1>
+      <h1>{name}</h1>
       <ul className="header-info">
         <li>
           <img src="img/github.png" alt="github" />
-          <span>{props.github}</span>
+          <span>{github}</span>
         </li>
         <li>
           <img src="img/location.png" alt="location" />
-          <span>{props.location}</span>
+          <span>{location}</span>
         </li>
         <li>
           <img src="img/mail.png" alt="email" />
-          <span>{props.email}</span>
+          <span>{email}</span>
         </li>
         <li>
           <img src="img/phone.png" alt="phone number" />
-          <span>{props.phoneNumber}</span>
+          <span>{phoneNumber}</span>
         </li>
       </ul>
     </header>
