@@ -1,5 +1,15 @@
+@font-face {
+    font-family: "Inter";
+    src: url("components/fonts/Inter-VariableFont_slnt,wght.ttf");
+} 
+
+@font-face {
+    font-family: "SourceSansPro";
+    src: url("components/fonts/SourceSansPro-Regular.ttf");
+}
+
 body {
-    font-family: "Inter", sans-serif;
+    font-family: "Inter";
     background-color: grey;
 }
 
@@ -24,6 +34,7 @@ h1 {
 }
 
 .header-info {
+    font-family: "SourceSansPro";
     display: flex;
     gap: 30px;
     margin-block-start: 0px;
