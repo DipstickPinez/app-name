@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface EducationProps {
+export interface EducationProps {
   university: string;
   degree: string;
   date: string;

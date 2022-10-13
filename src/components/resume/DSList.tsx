@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface DSListProps {
+export interface DSListProps {
   title: string;
   items: string[];
 }
@@ -11,7 +11,7 @@ const DSList = (props: DSListProps) => {
       <h3>{props.title}</h3>
       <ul className="inline-list">
         {props.items.map(
-          description => <li>{description}</li>
+          (description, n) => <li key={description + n}>{description}</li>
         )}
       </ul>
     </section>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface ExperienceProps {
+export interface ExperienceProps {
   org: string;
   title?: string;
   href?: string;
