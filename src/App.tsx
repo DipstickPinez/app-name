@@ -17,7 +17,7 @@ export interface ResumeObject {
 
 function App() {
 
-  const [edit, setEdit] = useState<boolean>(false);
+  const [edit, setEdit] = useState<boolean>(true);
 
   const [header, setHeader] = useState<HeaderProps>({
     name: "James Raynor",
@@ -38,9 +38,9 @@ function App() {
     date: "March 2500 - Current",
   }
   const [experience, setExperience] = useState<ExperienceProps[]>([]);
-  const addExperience = () => {
+  const changeExperience = (exp?: ExperienceProps, n?: number) => {
     const copy = [...experience];
-    copy.push(defaultExperience);
+    copy[n ?? copy.length] = exp ?? defaultExperience;
     setExperience(copy);
   }
   const defaultProject = {
@@ -51,14 +51,14 @@ function App() {
       [
         "Reconstructed an ancient artifact of unknown origins from several fragments",
         "Repurposed the artifact to extract foreign essence from an infested body",
-        "Successfully purified the Queen of Blades, who was restored to her original form",
+        "Purified the Queen of Blades, who was restored to her original form",
       ],
     date: "October - December 2504",
-}
+  }
   const [projects, setProjects] = useState<ExperienceProps[]>([]);
-  const addProject = () => {
+  const changeProject = (exp?: ExperienceProps, n?: number) => {
     const copy = [...projects];
-    copy.push(defaultProject);
+    copy[n ?? copy.length] = exp ?? defaultProject;
     setProjects(copy);
   }
   const [skills, setSkills] = useState<DSListProps[]>([
@@ -125,30 +125,30 @@ function App() {
         <div>
           <section>
             <h2>Experience
-              {edit && <button className="button-add" onClick={addExperience}>
+              {edit && <button className="button-add" onClick={() => changeExperience()}>
                 +
               </button>}
             </h2>
             {experience.map((exp, n) =>
-              <Experience key={exp.org + n} exp={exp} />
+              <Experience key={"exp" + n} exp={exp} setExp={ex => changeExperience(ex, n)} edit={edit} />
             )}
           </section>
           <section>
             <h2>Projects
-              {edit && <button className="button-add" onClick={addProject}>
-              +
-            </button>}
+              {edit && <button className="button-add" onClick={() => changeProject()}>
+                +
+              </button>}
             </h2>
             {projects.map((exp, n) =>
-              <Experience key={exp.org + n} exp={exp} />
+              <Experience key={"prj" + n} exp={exp} setExp={ex => changeProject(ex, n)} edit={edit} />
             )}
           </section>
         </div>
         <div>
           <section>
             <h2>Skills</h2>
-            {skills.map(dsl =>
-              <DSList key={dsl.title} title={dsl.title} items={dsl.items} />
+            {skills.map((dsl, n) =>
+              <DSList key={"sk" + n} title={dsl.title} items={dsl.items} />
             )}
           </section>
           <section>
@@ -159,14 +159,14 @@ function App() {
               date="September 2018 - December 2021"
               college="Khoury College of Computer and Informational Sciences"
             />
-            {courses.map(dsl =>
-              <DSList key={dsl.title} title={dsl.title} items={dsl.items} />
+            {courses.map((dsl, n) =>
+              <DSList key={"crs" + n} title={dsl.title} items={dsl.items} />
             )}
           </section>
           <section>
             <h2>Interests</h2>
-            {interests.map(dsl =>
-              <DSList key={dsl.title} title={dsl.title} items={dsl.items} />
+            {interests.map((dsl, n) =>
+              <DSList key={"int" + n} title={dsl.title} items={dsl.items} />
             )}
           </section>
         </div>

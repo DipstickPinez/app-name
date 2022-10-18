@@ -10,13 +10,25 @@ export interface ExperienceProps {
   location?: string;
 }
 
-const Experience = (props: { exp: ExperienceProps }) => {
+const Experience = (props: { exp: ExperienceProps, setExp: (exp: ExperienceProps) => void, edit?: boolean }) => {
   const { org, title, href, link, description, date, location } = props.exp;
+  const setExp = props.setExp;
+  const edit = props.edit;
+
+  const editOrg = (org: string) => {
+    const copy = { ...props.exp };
+    copy.org = org;
+    setExp(copy);
+  }
 
   return (
     <section className="item">
       <div className="item-header">
-        <h3>{org}</h3>
+        {edit
+          ? <input value={org} onChange={e => editOrg(e.target.value)} />
+          : <h3>{org}</h3>
+        }
+
         {title && <span className="vert-bar" />}
         {title}
         {href && <span className="vert-bar" />}
