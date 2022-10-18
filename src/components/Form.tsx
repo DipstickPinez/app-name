@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ResumeObject } from '../App';
 import FormExp from './form/FormExp';
-import General from './form/General';
+import FormGeneral from './form/General';
 
 interface Props {
   resume: ResumeObject;
@@ -18,9 +18,9 @@ const Form = (props: Props) => {
   const getForm = () => {
     switch (step) {
       case 0:
-        return <General resume={props.resume} setResume={props.setResume} setPage={setStep} />
+        return <FormGeneral resume={props.resume} setResume={props.setResume} setPage={setStep} />
       case 1:
-        return <FormExp setPage={setStep} />
+        return <FormExp resume={props.resume} setResume={props.setResume} setPage={setStep} />
       default:
         break;
     }

@@ -6,7 +6,8 @@ interface Props {
   setResume: (res: ResumeObject) => void;
   setPage: (page: number) => void;
 }
-function General(props: Props) {
+
+function FormGeneral(props: Props) {
   const { resume, setResume, setPage } = props;
   const general = resume?.general ?? undefined;
   
@@ -24,17 +25,40 @@ function General(props: Props) {
 
   return (
     <>
+      <h2>What’s the best way for employers to contact you?</h2>
       <form>
-        <label htmlFor="name">Name</label>
-        <input id="name" type="text" value={name} onChange={e => setName(e.target.value)} />
-        <label htmlFor="github">Github</label>
-        <input id="github" type="text" value={github} onChange={e => setGithub(e.target.value)} />
-        <label htmlFor="location">Location</label>
-        <input id="location" type="text" value={location} onChange={e => setLocation(e.target.value)} />
-        <label htmlFor="email">Email</label>
-        <input id="email" type="text" value={email} onChange={e => setEmail(e.target.value)} />
-        <label htmlFor="phone">Phone</label>
-        <input id="phone" type="text" value={phoneNumber} onChange={e => setPhone(e.target.value)} />
+        <div className="inputGroup">
+          <div className="inputBlock">
+            <label className="inputLabel" htmlFor="name">Name</label>
+            <input className="textInput" id="name" type="text" value={name} onChange={e => setName(e.target.value)} />
+          </div>
+        </div>
+
+        <div className="inputGroup">
+          <div className="inputBlock">
+            <label className="inputLabel" htmlFor="github">Github</label>
+            <input className="textInput" id="github" type="text" value={github} onChange={e => setGithub(e.target.value)} />
+          </div>
+
+          <div className="inputBlock">
+            <label className="inputLabel" htmlFor="location">Location</label>
+            <input className="textInput" id="location" type="text" value={location} onChange={e => setLocation(e.target.value)} />
+          </div>
+        </div>
+        
+        <div className="inputGroup">
+          <div className="inputBlock">
+            <label className="inputLabel" htmlFor="email">Email</label>
+            <input className="textInput" id="email" type="text" value={email} onChange={e => setEmail(e.target.value)} />
+          </div>
+          
+          <div className="inputBlock">
+            <label className="inputLabel" htmlFor="phone">Phone</label>
+            <input className="textInput" id="phone" type="text" value={phoneNumber} onChange={e => setPhone(e.target.value)} />
+          </div>
+        </div>
+        
+        
 
         <button type="submit" onClick={e => { e.preventDefault(); onSubmit(); setPage(1); }}>
           Next
@@ -44,4 +68,4 @@ function General(props: Props) {
   );
 }
 
-export default General;
+export default FormGeneral;

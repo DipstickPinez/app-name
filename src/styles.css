@@ -8,6 +8,42 @@
     src: url("components/fonts/SourceSansPro-Regular.ttf");
 }
 
+form {
+    font-family: "Inter";
+}
+
+div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+}
+.inputGroup {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.inputBlock {
+    position: relative;
+    margin-bottom: 2em;
+    flex: 0 0 1fr;
+    max-width: 1fr;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.textInput {
+    display: block;
+    margin-bottom:0.5em;
+} 
+
+.inputLabel {
+    padding: 10px;
+}
+
 body {
     font-family: "Inter";
     background-color: grey;

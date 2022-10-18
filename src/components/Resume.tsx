@@ -17,7 +17,8 @@ function Resume(props: { resume: ResumeObject }) {
       <div className="main">
         <div>
           <section>
-            <h2>Experience</h2>
+            <h2>Experience</h2>  
+            {/* /**
             <Experience
               org="Raynor's Raiders"
               title="Commander"
@@ -27,12 +28,12 @@ function Resume(props: { resume: ResumeObject }) {
                 "Launched dozens of successful tactical strikes on highly defended targets",
               ]}
               date="March 2500 - Current"
-              location="Koprulu Sector"
-            />
+              location="Koprulu Sector")
+            /> */}
           </section>
           <section>
             <h2>Projects</h2>
-            <Experience
+            {/* <Experience
               org="Xel'naga Artifact"
               href="https://www.xelnaga.com/"
               link="xelnaga.com"
@@ -42,7 +43,7 @@ function Resume(props: { resume: ResumeObject }) {
                 "Successfully purified the Queen of Blades, who was restored to her original form",
               ]}
               date="October - December 2504"
-            />
+            /> */}
           </section>
         </div>
         <div>
