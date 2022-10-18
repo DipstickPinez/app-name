@@ -10,26 +10,28 @@ export interface ExperienceProps {
   location?: string;
 }
 
-const Experience = (props: ExperienceProps) => {
+const Experience = (props: { exp: ExperienceProps }) => {
+  const { org, title, href, link, description, date, location } = props.exp;
+
   return (
     <section className="item">
       <div className="item-header">
-        <h3>{props.org}</h3>
-        {props.title && <span className="vert-bar" />}
-        {props.title}
-        {props.href && <span className="vert-bar" />}
+        <h3>{org}</h3>
+        {title && <span className="vert-bar" />}
+        {title}
+        {href && <span className="vert-bar" />}
         <span>
-          <a href={props.href}>{props.link ?? props.href}</a>
+          <a href={href}>{link ?? href}</a>
         </span>
       </div>
       <div className="item-date">
-        {props.date}
-        {props.location && <span className="vert-bar" />}
-        {props.location}
+        {date}
+        {location && <span className="vert-bar" />}
+        {location}
       </div>
       <ul>
-        {props.description.map(
-          description => <li>{description}</li>
+        {description.map(
+          description => <li key={description}>{description}</li>
         )}
       </ul>
     </section>

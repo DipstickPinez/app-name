@@ -126,3 +126,14 @@ h4 {
     color: grey;
     font-size: 0.95em;
 }
+
+
+.button-add {
+    vertical-align: middle;
+    background-color: unset;
+    border: unset;
+    color: inherit;
+    font-weight: 500;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
