@@ -2,14 +2,14 @@ import React from 'react';
 
 export interface HeaderProps {
   name: string;
-  github: string;
-  location: string;
-  email: string;
-  phoneNumber: string;
+  github?: string;
+  location?: string;
+  email?: string;
+  phone?: string;
 }
 
 const Header = (props: { header: HeaderProps }) => {
-  const { name, github, location, email, phoneNumber } = props.header;
+  const { name, github, location, email, phone } = props.header;
   return (
     <header>
       <h1>{name}</h1>
@@ -28,7 +28,7 @@ const Header = (props: { header: HeaderProps }) => {
         </li>
         <li>
           <img src="img/phone.png" alt="phone number" />
-          <span>{phoneNumber}</span>
+          <span>{phone}</span>
         </li>
       </ul>
     </header>
